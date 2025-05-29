@@ -1,0 +1,69 @@
+/* Basic styling for rendered markdown if Tailwind prose plugin is not available */
+/* These styles complement Tailwind's base and utility classes. */
+body {
+  font-family: sans-serif;
+}
+
+#markdown-container h1 {
+  @apply text-4xl font-bold mt-8 mb-6 pb-2 border-b border-gray-300;
+}
+#markdown-container h2 {
+  @apply text-3xl font-semibold mt-6 mb-4 pb-1 border-b border-gray-200;
+}
+#markdown-container h3 {
+  @apply text-2xl font-semibold mt-5 mb-3;
+}
+#markdown-container h4 {
+  @apply text-xl font-semibold mt-4 mb-2;
+}
+#markdown-container p {
+  @apply my-4 leading-relaxed text-gray-700;
+}
+#markdown-container pre {
+  @apply bg-gray-800 text-white p-4 rounded-md overflow-x-auto my-4 text-sm;
+}
+/* Reset code styles inside pre, as pre already has styling */
+#markdown-container pre code {
+  @apply bg-transparent p-0 rounded-none text-sm text-white normal-case tracking-normal;
+}
+/* Inline code */
+#markdown-container code {
+  @apply bg-gray-200 text-gray-800 px-1 py-0.5 rounded text-sm font-mono;
+}
+#markdown-container ul, #markdown-container ol {
+  @apply list-inside my-4 pl-4 text-gray-700;
+}
+#markdown-container ul {
+  @apply list-disc;
+}
+#markdown-container ol {
+  @apply list-decimal;
+}
+#markdown-container li {
+  @apply my-1;
+}
+#markdown-container li p {
+  @apply inline; /* Avoid extra margins for paragraphs inside list items */
+}
+#markdown-container a {
+  @apply text-blue-600 hover:text-blue-800 hover:underline;
+}
+#markdown-container blockquote {
+  @apply border-l-4 border-blue-500 bg-blue-50 pl-4 pr-4 py-2 italic my-4 text-gray-600;
+}
+#markdown-container table {
+  @apply w-full my-4 border-collapse border border-gray-300;
+}
+#markdown-container th, #markdown-container td {
+  @apply border border-gray-300 px-4 py-2 text-left;
+}
+#markdown-container th {
+  @apply bg-gray-100 font-semibold;
+}
+#markdown-container img {
+  @apply max-w-full h-auto my-4 rounded shadow;
+}
+#markdown-container hr {
+  @apply my-8 border-t border-gray-300;
+}
+
